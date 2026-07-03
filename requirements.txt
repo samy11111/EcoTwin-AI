@@ -1,0 +1,24 @@
+# EcoTwin AI - Dependencies
+# Version: 1.0.0
+
+# Core Data & Math
+pandas==2.2.0
+numpy==1.26.4
+
+# API Requests & Caching
+requests==2.31.0
+requests-cache==1.1.1
+
+# Geospatial & APIs
+geopy==2.4.1
+osmnx==1.9.1
+
+# AI & Machine Learning
+scikit-learn==1.4.0
+
+# Dashboard & Visualization
+streamlit==1.31.0
+plotly==5.18.0
+
+# Environment variables
+python-dotenv==1.0.1
