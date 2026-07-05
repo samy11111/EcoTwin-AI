@@ -1,13 +1,25 @@
-# EcoTwin AI
-**An Intelligent Digital Twin Platform for Sustainable Cities**
+# 🌍 EcoTwin AI : Real-Time Urban Digital Twin
 
-EcoTwin AI is a professional, open-source platform designed to analyze global cities, evaluate their environmental sustainability (EcoScore), determine their unique EcoDNA, and simulate urban improvements using Artificial Intelligence.
+EcoTwin AI is a Python-based Digital Twin engine that analyzes the real-time ecological and infrastructural health of any city in the world. 
 
-## Architecture
-This project follows a strict modular architecture:
-- `src/`: Main source code (core, services, AI, dashboard)
-- `data/`: Local data storage
-- `cache/`: Local cache to minimize API calls
-- `docs/`: Project documentation
-- `tests/`: Unit testing
-- `assets/`: Images and static resources
+It aggregates live data (Weather, Air Quality, Urban density) and uses the Google Gemini AI to generate expert sustainability reports.
+
+## 🚀 Features
+* **Live API Integrations:** Fetches real-time data from Nominatim, Open-Meteo, and OpenStreetMap.
+* **Resilient Architecture:** Implements a graceful degradation Fail-Safe if external OSM servers timeout.
+* **Scientific EcoScore:** Calculates a strict 0-100 score based on WHO guidelines and LEED urban standards.
+* **AI Brain:** Uses Google GenAI (`gemini-2.5-flash`) to generate actionable, data-driven urban planning solutions.
+
+## ⚙️ Installation
+1. Clone the repository:
+   `git clone https://github.com/TON_NOM_UTILISATEUR/EcoTwin-AI.git`
+2. Create a virtual environment:
+   `python -m venv venv`
+3. Install dependencies:
+   `pip install -r requirements.txt`
+4. Set up your `.env` file with your Google Gemini API key:
+   `GEMINI_API_KEY=your_api_key_here`
+
+## 🏃‍♂️ Usage
+Run the main pipeline:
+`python src/main.py`

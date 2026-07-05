@@ -9,16 +9,18 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from core.city import City
 from datahub.geocoding import Geocoder
 from datahub.climate import ClimateService
-from datahub.urbanism import UrbanismService # <-- Nouvel import
+from datahub.urbanism import UrbanismService
+from ai.brain import AIBrain
+from analysis.scoring import EcoAnalyzer # <-- Nouvel import
 
 def main():
     print("==================================================")
     print("              Welcome to EcoTwin AI               ")
     print("==================================================")
     
-    target_city_name = input("\nEnter the name of a city to analyze (e.g., Toronto): ").strip()
+    target_city_name = input("\nEnter the name of a city to analyze (e.g., Tokyo): ").strip()
     if not target_city_name:
-        target_city_name = "Toronto"
+        target_city_name = "Tokyo"
 
     my_city = City(name=target_city_name)
     
@@ -51,8 +53,23 @@ def main():
         my_city.road_length_km = urban_data.get("road_length_km")
         my_city.intersections_count = urban_data.get("intersections_count")
 
+        # 4. EcoScore & EcoDNA Analysis
+        print("[*] Calculating scientific EcoScore and EcoDNA...")
+        analyzer = EcoAnalyzer()
+        my_city.eco_score = analyzer.calculate_eco_score(my_city)
+        dna_type, dna_reason = analyzer.determine_eco_dna(my_city)
+        
+        # On sauvegarde le type et la raison dans la variable de la ville
+        my_city.eco_dna = f"{dna_type} ({dna_reason})"
+        print("[+] Success: Analysis complete.")
+
     # Affichage final
     my_city.display_summary()
+    # Phase 6 : AI Analysis
+    print("\n🤖 [AI ANALYSIS - Expert Report]")
+    brain = AIBrain()
+    report = brain.analyze_city(my_city)
+    print(report)
 
 if __name__ == "__main__":
     main()

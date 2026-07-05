@@ -74,8 +74,16 @@ class City:
         print(f"  - PM10:  {self.pm10} µg/m³" if self.pm10 is not None else "  - PM10:  N/A")
         print(f"  - AQI:   {self.aqi} (European Index)" if self.aqi is not None else "  - AQI:   N/A")
 
-        print("\n🏙️  [URBANISM (Core 3km radius)]")
+        print("\n🏙️  [URBANISM (Core 800m radius)]")
         print(f"  - Road Length:   {self.road_length_km} km" if self.road_length_km is not None else "  - Road Length:   N/A")
         print(f"  - Intersections: {self.intersections_count}" if self.intersections_count is not None else "  - Intersections: N/A")
         
+        print("\n🧬 [ECO-ANALYSIS]")
+        if self.eco_score is not None:
+            print(f"  - EcoScore: {self.eco_score} / 100")
+            print(f"  - EcoDNA:   {self.eco_dna}")
+        else:
+            print("  - EcoScore: N/A")
+            print("  - EcoDNA:   N/A")
+            
         print("\n==========================================\n")
