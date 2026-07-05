@@ -12,7 +12,7 @@ It aggregates live data (Weather, Air Quality, Urban density) and uses the Googl
 
 ## ⚙️ Installation
 1. Clone the repository:
-   `git clone https://github.com/TON_NOM_UTILISATEUR/EcoTwin-AI.git`
+   `git clone https://github.com/samy11111/EcoTwin-AI.git`
 2. Create a virtual environment:
    `python -m venv venv`
 3. Install dependencies:
